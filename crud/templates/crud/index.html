@@ -1,5 +1,12 @@
 <html>
   <body>
-    <h1>Hello</h1>
+    <h1>Hello, This is templates</h1>
+
+    {%if Blogs%}
+      {%for Blog in Blogs %}
+      <h2> {{Blog.title}}</h2>
+      <h5> {{Blog.description}}</h5>
+      {%endfor%}
+    {%endif%}
   </body>
 </html>
