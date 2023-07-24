@@ -2,9 +2,22 @@
   <body>
     <h1>Hello, This is templates</h1>
 
+    <!-- Paricular Blog -->
+{%if blog%}
+  <h2> {{blog.title}}</h2>
+  <h5> {{blog.description}}</h5>
+  <button type="submit">Delete</button>
+{%endif%}
+
+
+<!-- ALl blogs -->
     {%if Blogs%}
       {%for Blog in Blogs %}
-      <h2> {{Blog.title}}</h2>
+     <a href="{%url 'particular' Blog.id%}" >
+        <h2> {{Blog.title}}</h2>
+
+     </a>
+      <!-- <h2> {{Blog.title}}</h2> -->
       <h5> {{Blog.description}}</h5>
       {%endfor%}
     {%endif%}
